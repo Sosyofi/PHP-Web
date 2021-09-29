@@ -14,11 +14,10 @@ if(isset($_POST['submit'])){
     require_once 'entity/user.php';
     $user = new user();
     
-    // atama işlemleri
+    // atama işlemleris
     $user->set_name($_POST['isim']);
 
-
 }else{
-    header('location: ../../index.php');
+    header("location: ../index.php");
     exit();
 }

@@ -1,0 +1,313 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:black;
+}
+
+
+.main{
+    position: relative;
+    height: 100vh;
+}
+/* Main section start */
+.login-main-section{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+}
+.bg-colors{
+    z-index: -2;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+}
+.main-bg-color{
+    z-index: -4;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(8, 32, 50, 1);
+}
+.main-f-circle{
+    z-index: -2;
+    position: absolute;
+    bottom: 50%;
+    aspect-ratio: 1/1;
+    width: 100%;
+    background-color: rgba(255, 144, 41, 1);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
+.main-s-circle{
+    z-index: -3;
+    position: absolute;
+    top: 50%;
+    aspect-ratio: 1/1;
+    width: 100%;
+    background-color: rgba(63, 0, 113, 1);
+    border-radius: 50%;
+    filter: blur(30px);
+}
+
+/* Main section start */
+
+/* İnfo section start */
+.info-section{
+    
+    width: 50%;
+}
+.info-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.info-h1-section{
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    width: 65%;
+    height: 20%;
+}
+
+.info-h1-dot,
+.info-h1-text{
+    display: inline-block;
+    font-family: Source Sans Pro;
+    font-size: 6vw;
+}
+.info-h1-text{
+    color: white;
+}
+.info-h1-dot{
+    color: rgba(156, 226, 201, 1);
+}
+
+.info-socialmedia-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.info-socialmedia-div{
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 300px;
+}
+
+.info-socialmedia-circle{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: white;
+}
+.info-socialmedia-s-line-div,
+.info-socialmedia-f-line-div{
+    position: absolute;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.info-socialmedia-f-line{
+    width: 90%;
+    height: 3%;
+    background-color: rgba(62, 210, 95,1);
+    border-radius: 20px;
+}
+.info-socialmedia-s-line{
+    width: 3%;
+    height: 90%;
+    background-color: rgba(62, 210, 95,1);
+    border-radius: 20px;
+}
+
+.info-socialmedia-unsplash-div{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    width: 22%;
+    border-radius: 20%;
+    background-color: white;
+}
+
+.info-socialmedia-instagram,
+.info-socialmedia-twitch,
+.info-socialmedia-unsplash,
+.info-socialmedia-twitter{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.info-socialmedia-unsplash{
+    aspect-ratio: 1/1;
+    width: 80%;
+    background-image: url('../imgs/unsplash.png');
+}
+.info-socialmedia-twitter{
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    aspect-ratio: 1/1;
+    width: 22%;
+    border-radius: 20%;
+    background-image: url('../imgs/twitter.png');
+
+}
+.info-socialmedia-instagram{
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    aspect-ratio: 1/1;
+    width: 22%;
+    border-radius: 20%;
+    background-image: url('../imgs/instagram.png');
+
+}
+.info-socialmedia-twitch{
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    width: 22%;
+    border-radius: 20%;
+    background-image: url('../imgs/twitch.png');
+}
+.info-text-section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.info-text-div{
+    width: 90%;
+}
+.info-p-text{
+    font-family: Source Sans Pro;
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+}
+/* İnfo section end */
+
+/* Form section start */
+.form-section{
+    position: relative;
+    width: 50%;
+}
+.form-div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    margin-top: 50px;
+}
+.form-f-text{
+    margin-left: 7vw;
+    margin-right: 7vw;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(23, 51, 94, 1);
+}
+.form-s-text{
+    font-family: Source Sans Pro;
+    font-style: normal;
+    text-align: center;
+    font-size: 25px;
+}
+.form-bg-color{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: linear-gradient(90deg, rgba(237, 237, 237, 0.65) 0%, rgba(255, 255, 255, 0.65) 101.93%);
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 350px;
+}
+.form-text-input{
+    font-size: 18px;
+    font-family: Source Sans Pro;
+    width: 55%;
+    padding-left: 40px;
+    border: none;
+    background: #EDEDED;
+    box-shadow: -3px -3px 20px #FFFFFF, 10px 5px 20px rgba(6, 6, 6, 0.4);
+    border-radius: 30px;
+    height: 50px;
+}
+.form-text-input:focus{
+    outline: none;
+    
+}
+.main-form-submit{
+    cursor: pointer;
+    font-family: Source Sans Pro;
+    margin-top: 12%;
+    width: 55%;
+    border: none;
+    background: #83ED80;
+    border-radius: 30px;
+    height: 50px;
+    transition: 0.5s;
+}
+.main-form-submit:hover{
+    background-color: yellow;
+    box-shadow: -3px -3px 20px #FFFFFF, 10px 5px 20px rgba(6, 6, 6, 0.4);
+}
+.form-login-section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.form-login-p{
+    font-family: Source Sans Pro;
+    color: #676767;
+}
+.form-login-a{
+    text-decoration: none;
+    color: #000000;
+    font-family: Source Sans Pro;
+}
+.form-login-div{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}
+/* Form section end */

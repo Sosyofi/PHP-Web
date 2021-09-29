@@ -18,6 +18,6 @@ if(isset($_POST['submit'])){
     $user->set_name($_POST['isim']);
 
 }else{
-    header('location: ../../index.php');
+    header('location: ../index.php');
     exit();
 }

@@ -15,4 +15,5 @@ class signup
 
     // Veri tabanı fonksiyonları bundan sonra yazılacak.
 
+
 }
