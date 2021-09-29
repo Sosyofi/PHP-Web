@@ -1,7 +1,7 @@
 <!-- Bu kısım, formlardan gelen $_POST değerlerini değişkene atayacağımız kısım. -->
 <?php
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     // veri tabanı bağlantısı ve nesnesinin oluşturulması
     require_once 'db.inc.php';
     $db = new DBController();
@@ -12,12 +12,25 @@ if(isset($_POST['submit'])){
 
     // user nesnesinin oluşturulması
     require_once 'entity/user.php';
-    $user = new user();
-    
-    // atama işlemleri
-    $user->set_name($_POST['isim']);
+    $user = new User();
 
-}else{
+    // atama işlemleri
+    $user->set_email($_POST['email']);
+    $user->set_hashed_password($_POST['hashed_password']);
+
+
+    if (
+        $login->emptyInputLogin($user->get_email(), $user->get_hashed_password()) !== true
+    ) {
+        header("location: ../login.php?error=emptyinput");
+        exit();
+    }
+    if ($login->invalidEmail($user->get_email()) !== true) {
+        header("location: ../login.php?error=invalidEmail");
+        exit();
+    }
+    $login->login($user->get_email(), $user->get_hashed_password());
+} else {
     header('location: ../../index.php');
     exit();
 }
