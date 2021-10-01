@@ -15,10 +15,29 @@ class login
 
     // Veri tabanı fonksiyonları bundan sonra yazılacak.
 
-    public function login($email, $password)
+    function emailExists($conn, $email)
+    {
+        $sql = "SELECT * FROM users WHERE email = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../signup.php?error=stmtfailed");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($resultData)) {
+            return $row;
+        } else {
+            return true;
+        }
+        mysqli_stmt_close($stmt);
+    }
+
+    function login($email, $password)
     {
         $emailExists = $this->emailExists($this->db->get_conn(), $email);
-
         if ($emailExists === true) {
             header("location: ../login.php?error=wronglogin");
             exit();
@@ -33,7 +52,7 @@ class login
         } else if ($checkPwd === true) {
             session_start();
             $_SESSION["userid"] = $emailExists["id"];
-            $_SESSION["firstname"] = $emailExists["first_name"];
+            $_SESSION["nickname"] = $emailExists["nickname"];
             header("location: ../index.php");
             exit();
         }
@@ -55,24 +74,5 @@ class login
         } else {
             return true;
         }
-    }
-    function emailExists($conn, $email)
-    {
-        $sql = "SELECT * FROM users WHERE email = ?;";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../signup.php?error=stmtfailed");
-            exit();
-        }
-        mysqli_stmt_bind_param($stmt, "s", $email,);
-        mysqli_stmt_execute($stmt);
-        $resultData = mysqli_stmt_get_result($stmt);
-
-        if ($row = mysqli_fetch_assoc($resultData)) {
-            return $row;
-        } else {
-            return true;
-        }
-        mysqli_stmt_close($stmt);
     }
 }

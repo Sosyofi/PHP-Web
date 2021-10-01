@@ -3,6 +3,7 @@
 
 class User
 {
+   private $id = null;
    private $nickname = null;
    private $first_name = null;
    private $last_name = null;
@@ -10,7 +11,14 @@ class User
    private $hashed_password = null;
    private $picture = null;
 
-
+   public function get_id()
+   {
+      return $this->id;
+   }
+   public function set_id($id)
+   {
+      $this->id = $id;
+   }
    public function get_nickname()
    {
       return $this->nickname;
