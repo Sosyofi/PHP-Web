@@ -25,9 +25,10 @@ require_once './includes/functions/entity_functions/userfunc.php'
                 <div class="category-div">
                     <?php
                     print_r($item["nickname"]);
+                    print_r($item["first_name"]);
                     print_r($item["last_name"]);
                     print_r($item["email"]);
-                    print_r($item["first_name"]);
+                    print_r($item["picture"]);
                     print_r($item["instagram"]);
                     print_r($item["twitch"]);
                     print_r($item["twitter"]);
