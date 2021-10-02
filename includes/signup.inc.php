@@ -39,8 +39,6 @@ if (isset($_POST['submit'])) {
     session_start();
     $user->set_email($_SESSION["email"]);
     $user->set_hashed_password($_SESSION["password"]);
-    session_unset();
-    session_destroy();
     $user->set_nickname($_POST['nickname']);
     $user->set_first_name($_POST['first_name']);
     $user->set_last_name($_POST['last_name']);

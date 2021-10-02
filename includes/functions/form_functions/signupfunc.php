@@ -20,7 +20,7 @@ class signup
         $sql = "INSERT INTO users (nickname, first_name, last_name, email, hashed_password) VALUES (?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($this->db->get_conn());
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../signup.php?error=stmtfailed");
+            header("location: ../index.php?error=stmtfailed");
             exit();
         }
         $hashedPwd = password_hash($hashed_password, PASSWORD_DEFAULT);
@@ -28,7 +28,7 @@ class signup
         mysqli_stmt_bind_param($stmt, "sssss", strtolower($nickname), $first_name, $last_name, $email, $hashedPwd);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-        header("location: ../main.php?error=success");
+        header("location: ../index.php?error=success");
         exit();
     }
 
@@ -70,7 +70,7 @@ class signup
         $sql = "SELECT * FROM users WHERE email = ?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../signup.php?error=stmtfailed");
+            header("location: ../index.php?error=stmtfailed");
             exit();
         }
         mysqli_stmt_bind_param($stmt, "s", $email,);
@@ -89,7 +89,7 @@ class signup
         $sql = "SELECT * FROM users WHERE nickname = ?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../signup.php?error=stmtfailed");
+            header("location: ../index.php?error=stmtfailed");
             exit();
         }
         mysqli_stmt_bind_param($stmt, "s", strtolower($nickname),);

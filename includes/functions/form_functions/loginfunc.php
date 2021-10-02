@@ -33,7 +33,7 @@ class login
         } else if ($checkPwd === true) {
             session_start();
             $_SESSION["userid"] = $emailExists["id"];
-            $_SESSION["firstname"] = $emailExists["first_name"];
+            $_SESSION["username"] = $emailExists["nickname"];
             header("location: ../main.php?error=success");
             exit();
         }

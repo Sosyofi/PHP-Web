@@ -2,6 +2,7 @@
 
 <?php
 include_once 'header.php'; 
+
 session_start();
 //Header kısmının index.php sayfasına dahil edilmesi.
 if(isset($_SESSION["userid"])){
