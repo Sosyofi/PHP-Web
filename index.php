@@ -21,7 +21,23 @@ require_once './includes/functions/entity_functions/userfunc.php'
             $db = new DBController();
             $follower = new userfunc($db); ?>
             <?php
-            echo "Takipçi Sayısı : ", $follower->getFollowers($_SESSION['userid']);
+            foreach ($follower->getFollowers($_SESSION['userid']) as $item) { ?>
+                <div class="category-div">
+                    <?php
+                    print_r($item["nickname"]);
+                    print_r($item["last_name"]);
+                    print_r($item["email"]);
+                    print_r($item["first_name"]);
+                    print_r($item["instagram"]);
+                    print_r($item["twitch"]);
+                    print_r($item["twitter"]);
+                    print_r($item["unsplash"]);
+                    ?>
+                </div>
+            <?php } ?>
+
+            <?php
+            echo "Takipçi Sayısı : ", $follower->getFollowersCount($_SESSION['userid']);
             echo "Takip Edilen Sayısı : ", $follower->getFollowed($_SESSION['userid']) ?>
         </section>
         </p>
