@@ -1,0 +1,416 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+}
+.main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.main-page{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.followers-page-section{
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.bg-section{
+    z-index: -2;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.bg-color{
+
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: conic-gradient(from 180deg at 41.05% 38.24%, #E18787 0deg, #460878 360deg);
+    filter: blur(5px);
+}
+
+/* followers page start */
+.search-form-desktop{
+    text-align: center;
+    width: 100%;
+}
+.search-form-laptop{
+    display: none;
+}
+.search-user{
+    font-size: 18px;
+    font-family: Source Sans Pro;
+    font-weight: 200;
+    width: 50%;
+    max-width: 400px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: -3px -3px 20px #FFFFFF, 10px 5px 20px rgba(6, 6, 6, 0.4);
+    border-radius: 15px;
+    height: 50px;
+}
+.search-user:focus{
+    outline: none;
+}
+.search-user::placeholder{
+    color: black;
+    text-align: center;
+}
+.social-media-filter-section{
+    display: flex;
+    align-items: center;
+    border: 1px solid #959595;
+    border-radius: 8px;
+    background: rgba(118, 118, 118, 0.3);
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.filter-twitch,
+.filter-instagram,
+.filter-unsplash,
+.filter-twitter{
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 20%;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+.filter-twitch{
+    color: white;
+    background-color: #460878;
+}
+.filter-instagram{
+    color: black;
+    background-color: rgba(255, 179, 68, 1)
+}
+.filter-unsplash{
+    color: black;
+    background-color: rgba(236, 236, 236, 1)
+}
+.filter-twitter{
+    color: black;
+    background-color: rgba(56, 171, 254, 1)
+}
+.followers-tamplate-section{
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 75%;
+    min-height: 400px;
+    justify-content: flex-start;
+}
+.followers-tamplate-div{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    height: 100px;
+    min-height: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.followers-info-section{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.followers-info-pic{
+    position: relative;
+    width: 100%;
+    height: 9vw;
+    display: flex;
+    align-items: center;
+}
+.photo-a{
+    width: 25%;
+    max-width: 90px;
+}
+.follower-pp-background{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    border: 0.5vw solid #AD6178;
+    border-radius: 4px;
+}
+.follower-pp{
+    background-image: url('../../imgs/unnamed.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    width: 90%;
+}
+.followers-info-foll-text,
+.followers-info-foll-num,
+.followers-info-user-name-mobile,
+.followers-info-user-name{
+    text-align: center;
+    font-size: min(24px, max(15px, 2vw));
+    font-weight: 200;
+    color: white;
+    font-family: Source Sans Pro;
+}
+.followers-info-foll-num{
+    font-weight: 700;
+}
+.followers-social-media-section-4,
+.followers-social-media-section-4-desktop,
+.followers-social-media-section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.followers-social-media-section-4{
+    display: none;
+}
+.followers-twitch,
+.followers-instagram,
+.followers-unsplash,
+.followers-twitter{
+    aspect-ratio: 5/1;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 30%;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+.followers-twitch-4,
+.followers-instagram-4,
+.followers-unsplash-4,
+.followers-twitter-4{
+    aspect-ratio: 6/1;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 50%;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+.followers-twitch-4-desktop,
+.followers-instagram-4-desktop,
+.followers-unsplash-4-desktop,
+.followers-twitter-4-desktop{
+    aspect-ratio: 5/1;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 20%;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+
+.followers-twitch-4-desktop,
+.followers-twitch-4,
+.followers-twitch{
+    color: white;
+    background-color: #460878;
+}
+.followers-instagram-4-desktop,
+.followers-instagram-4,
+.followers-instagram{
+    color: black;
+    background-color: rgba(255, 179, 68, 1)
+}
+.followers-unsplash-4-desktop,
+.followers-unsplash-4,
+.followers-unsplash{
+    color: black;
+    background-color: rgba(236, 236, 236, 1)
+}
+.followers-twitter-4-desktop,
+.followers-twitter-4,
+.followers-twitter{
+    color: black;
+    background-color: rgba(56, 171, 254, 1)
+}
+.followers-social-media-4{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.followers-info-foll-mobile,
+.followers-info-user-name-mobile,
+.followers-info-mobile{
+    display: none;
+}
+/* followers page end */
+
+/* my profile page start */
+.laptop-search{
+    width: 25%;
+    height: 100vh;
+}
+.my-profile-info-section{
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.my-profile-info-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    height: 55vh;
+    min-height: 347px;
+}
+.my-info-pic-div{
+    aspect-ratio: 1/1;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-profile-p{
+    font-family: Source Sans Pro;
+    color: white;
+    font-size: 25px;
+}
+.my-pp-background{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    width: 90%;
+    border-radius: 50%;
+    background: rgba(77, 15, 126, 0.01);
+    box-shadow: -10px -10px 20px rgba(183, 174, 174, 0.25), 10px 10px 19px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+.my-pp-background:hover{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.my-pp{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    width: 85%;
+    background-image: url('../../imgs/IMG_1706.PNG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.my-pp-p-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.my-pp-p-div:hover{
+    opacity: 1;
+}
+.my-pp-p{
+    position: relative;
+    bottom: -35px;
+    font-family: Source Sans Pro;
+    color: orange;
+    font-size: 25px;
+}
+.my-user-name{
+    font-family: Source Sans Pro;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+.my-profile-info-followers-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.follow-div,
+.followers-div{
+    width: 50%;
+    max-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.followers-count{
+    font-family: Source Sans Pro;
+    font-size: 25px;
+    color: rgba(126, 181, 166, 1);
+}
+.follow-count{
+    font-family: Source Sans Pro;
+    font-size: 25px;
+    color: white;
+}
+.followers-text{
+    font-weight: 200;
+    color: white;
+    font-family: Source Sans Pro;
+}
+.my-profile-info-bio-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-profile-bio{
+    font-weight: 200;
+    width: 60%;
+    text-align: center;
+    color: white;
+    font-family: Source Sans Pro;
+}
+/* my profile page end */

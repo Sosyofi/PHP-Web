@@ -1,0 +1,153 @@
+@media only screen and (max-width: 1024px) {
+  .main{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    height: 100vh;
+    min-height: 750px;
+}
+.bg-section{
+  z-index: -2;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  min-height: 750px;
+  overflow: hidden;
+}
+.my-pp-background{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 90%;
+  border-radius: 50%;
+  background: rgba(77, 15, 126, 0.01);
+  box-shadow: -5px -5px 20px rgba(183, 174, 174, 0.25), 5px 5px 19px rgba(0, 0, 0, 0.25);
+  transition: 0.5s;
+}
+.photo-a{
+  width: 25%;
+  max-width: 60px;
+}
+.my-profile-info-header{
+  height: 100%;
+  height: unset;
+  min-height: unset;
+}
+.laptop-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  max-height: 300px;
+}
+  .my-profile-info-section{
+    max-height: 200px;
+    min-height: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.my-info-pic-div{
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 140px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-page{
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: row;
+}
+.social-media-filter-section{
+  display: flex;
+  align-items: center;
+  border: 1px solid #959595;
+  border-radius: 8px;
+  background: rgba(118, 118, 118, 0.3);
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.followers-page-section{
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.bg-color{
+  background: conic-gradient(from -90deg at 70% 35%, #E18787 0deg, #460878 360deg);
+  filter: blur(2px);
+}
+.search-form{
+  margin-top: 20px;
+  text-align: center;
+}
+.search-user{
+  max-width: unset;
+  width: 60%;
+}
+.search-form-laptop{
+  display: unset;
+}
+.search-form-desktop{
+  display: none;
+}
+.my-profile-p{
+  display: none;
+}
+.my-pp-p-div:hover{
+  opacity: 0;
+}
+.followers-twitch,
+.followers-instagram,
+.followers-unsplash,
+.followers-twitter{
+    aspect-ratio: 9/2;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 100px;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+.followers-twitch-4,
+.followers-instagram-4,
+.followers-unsplash-4,
+.followers-twitter-4{
+    aspect-ratio: 10/2;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 100px;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+}
+.followers-social-media-section-4{
+  display: flex;
+}
+.followers-social-media-section-4-desktop{
+  display: none;
+}
+}
+
+@media only screen and (max-width: 1100px) {
+  
+}
+

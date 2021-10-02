@@ -1,0 +1,51 @@
+@media only screen and (max-width: 768px) {
+    .main-f-circle{
+        right: 40%;
+        top: 0px;
+        height: 100%;
+    }
+    .main-s-circle{
+        left: 30%;
+        top: 0px;
+        height: 100%;
+    }
+    .info-section{
+    
+        width: 100px;
+    }
+    .info-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+    }
+    .info-h1-section{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        width: 100px;
+        
+    }
+    .form-login-p{
+        color: white;
+    }
+    .info-h1-section{
+        transform: rotate(270deg);
+    }
+    .info-text-section,
+    .info-socialmedia-section{
+        display: none;
+    }
+    
+    .form-section{
+        width: 100%;
+    }
+    .form-f-text{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .form-bg-color{
+        background: rgba(237, 237, 237, 0.3);
+    }
+}
