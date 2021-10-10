@@ -1,4 +1,3 @@
-<!-- Kullanıcıların özelliklerinin bulunduğu dosya -->
 <?php
 
 class User

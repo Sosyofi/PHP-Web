@@ -1,4 +1,3 @@
-<!-- Kullanıcılar üzerinden yapılacak işlemler için bu dosya kullanılacak ve bu dosyada fonksiyonlar bulunacak. -->
 <?php
 session_start();
 class userfunc
@@ -56,6 +55,20 @@ class userfunc
                 $resultArray[] = $row;
             }
             return $resultArray;
+        }
+    }
+
+    function getMyUsersMobile($id)
+    {
+        $response = array();
+        $sql = "SELECT * FROM followers WHERE user_id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $response = $this->getUser($row["follower_id"]);
+            }
+            return $response;
         }
     }
 
