@@ -66,7 +66,8 @@ class userfunc
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $response = $this->getUser($row["follower_id"]);
+                $response["follower_user"] = $this->getUser($row["follower_id"]);
+                $response["followers_count"] = $this->getFollowersCount($row["follower_id"]);
             }
             return $response;
         }
