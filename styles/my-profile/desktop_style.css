@@ -1,0 +1,286 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+}
+.main{
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.profile-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.my-profile-info-section{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form-section{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.my-info-pic-div{
+    aspect-ratio: 1/1;
+    width: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+}
+
+.my-pp-background{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    width: 90%;
+    border-radius: 50%;
+    background: rgba(77, 15, 126, 0.01);
+    box-shadow: 10px -10px 20px #a3e18749, -10px 10px 19px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+.my-pp-background:hover{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.my-pp{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    width: 85%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.my-pp-p-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.my-pp-p-div:hover{
+    opacity: 1;
+}
+.my-pp-p{
+    position: relative;
+    bottom: -35px;
+    font-family: Source Sans Pro;
+    color: white;
+    font-size: 25px;
+}
+.bg-section{
+    z-index: -2;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+}
+.bg-color{
+
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: conic-gradient(from 164.35deg at 30% 20%, #A4E187 0deg, #085078 360deg);
+    filter: blur(5px);
+}
+.search-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.search-form-desktop{
+    text-align: center;
+    width: 100%;
+}
+.search-user{
+    font-size: 18px;
+    font-family: Source Sans Pro;
+    font-weight: 200;
+    width: 50%;
+    max-width: 400px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: -3px -3px 20px #FFFFFF, 10px 5px 20px rgba(6, 6, 6, 0.4);
+    border-radius: 15px;
+    height: 50px;
+}
+.search-user:focus{
+    outline: none;
+}
+.search-user::placeholder{
+    color: black;
+    text-align: center;
+}
+.my-profile-info-followers-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.follow-div,
+.followers-div{
+    width: 50%;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.followers-count{
+    font-family: Source Sans Pro;
+    font-size: 40px;
+    color: rgba(126, 181, 166, 1);
+}
+.follow-count{
+    font-family: Source Sans Pro;
+    font-size: 40px;
+    color: white;
+}
+.followers-text{
+    font-size: 35px;
+    font-weight: 200;
+    color: white;
+    font-family: Source Sans Pro;
+}
+.bio-div{
+    width: 100%;
+}
+.profile-form-div{
+    width: 70%;
+margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.input-div,
+.form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.bio-div{
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+}
+.bio-text-h1{
+    display: inline-block;
+    color: white;
+    font-family: Source Sans Pro;
+    font-size: 80px;
+    margin-left: 15px;
+}
+.profile-bio-text{
+    text-align: center;
+    font-family: Source Sans Pro;
+    font-size: 20px;
+    font-weight: 200;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+.profile-bio-text:focus{
+    outline: none;
+}
+.form-div{
+    margin-top: 30px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+.input-div{
+    margin: 10px;
+    width: 90%;
+}
+.social-media-input{
+    text-align: center;
+    width: 100%;
+    height: 40px;
+}
+.input-text{
+    font-family: Source Sans Pro;
+    font-size: 20px;
+    color: white;
+    font-weight: 200;
+}
+.submit-button{
+    color: orange;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    font-family: Source Sans Pro;
+    font-size: 20px;
+    background-color: transparent;
+}
+.bg-text-div{
+    opacity: 0.5;
+    width: 100%;
+    color: white;
+    font-family: Source Sans Pro;
+    position: absolute;
+    z-index: -1;
+    bottom: 0px;
+}
+.bg-text{
+    text-align: center;
+    width: 100%;
+    font-size: 10vw;
+    font-family: Source Sans Pro;
+    font-weight: 700;
+}
+input[type="file"] {
+    display: none;
+}
+.my-pp-background{
+    cursor: pointer;
+}
+/* my profile page end */

@@ -595,7 +595,7 @@
                 <section class="my-profile-info-header">
                     <p class="my-profile-p">Hoşgeldin!</p>
                     <div class="my-info-pic-div">
-                        <a class="my-pp-background" href="#">
+                        <a class="my-pp-background" href="./my_profile.php?user=<?php echo $_SESSION['username'] ?>">
                         
                             <div class="my-pp-background">
                                 <?php
