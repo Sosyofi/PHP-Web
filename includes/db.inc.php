@@ -1,4 +1,3 @@
-<!-- Veri tabanı ile bağlantı kodları yazılacak. -->
 <?php
 require_once 'config.php';
 class DBController

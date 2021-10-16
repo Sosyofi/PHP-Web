@@ -1,6 +1,4 @@
-<!-- Kullanıcılar üzerinden yapılacak işlemler için bu dosya kullanılacak ve bu dosyada fonksiyonlar bulunacak. -->
 <?php
-
 class userfunc
 {
     public $db = null;
@@ -14,7 +12,17 @@ class userfunc
 
     function getUser($id)
     {
-        $sql = "SELECT * FROM users WHERE id =" . $id . ",";
+        $sql = "SELECT * FROM users WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
+        }
+    }
+    function getUsers($id)
+    {
+        $sql = "SELECT * FROM users WHERE id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
         $resultArray = array();
@@ -26,31 +34,32 @@ class userfunc
         }
     }
 
-    function getFollowers($user_id)
+    function getMyUsersMobile($id)
     {
-        $sql = "SELECT * FROM followers WHERE user_id =" . $user_id . ";";
+        $response = array();
+        $sql = "SELECT * FROM followers WHERE follower_id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $sql = "SELECT * FROM users WHERE id =" . $row["follower_id"] . ";";
-                $res = mysqli_query($this->db->get_conn(), $sql);
+                $response["follower_user"] = $this->getUser($row["user_id"]);
+                $response["followers_count"] = $this->getFollowersCount($row["follower_id"]);
             }
-            return $res;
+            return $response;
         }
     }
 
-    function getFollowersCount($user_id)
+    function getFollowersCount($id)
     {
-        $sql = "SELECT * FROM followers WHERE user_id =" . $user_id . ";";
+        $sql = "SELECT * FROM followers WHERE follower_id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
         return $resultCheck;
     }
 
-    function getFollowed($follower_id)
+    function getFollowed($id)
     {
-        $sql = "SELECT * FROM followers WHERE follower_id =" . $follower_id . ";";
+        $sql = "SELECT * FROM followers WHERE user_id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
         return $resultCheck;

@@ -1,4 +1,3 @@
-<!-- Kullanıcıların özelliklerinin bulunduğu dosya -->
 <?php
 
 class User
@@ -10,6 +9,11 @@ class User
    private $email = null;
    private $hashed_password = null;
    private $picture = null;
+   private $bio = null;
+   private $instagram = null;
+   private $twitch = null;
+   private $twitter = null;
+   private $unsplash = null;
 
    public function get_id()
    {
@@ -66,5 +70,45 @@ class User
    public function set_picture($picture)
    {
       $this->picture = $picture;
+   }
+   public function get_bio()
+   {
+      return $this->bio;
+   }
+   public function set_bio($bio)
+   {
+      $this->bio = $bio;
+   }
+   public function get_instagram()
+   {
+      return $this->instagram;
+   }
+   public function set_instagram($instagram)
+   {
+      $this->instagram = $instagram;
+   }
+   public function get_twitch()
+   {
+      return $this->twitch;
+   }
+   public function set_twitch($twitch)
+   {
+      $this->twitch = $twitch;
+   }
+   public function get_twitter()
+   {
+      return $this->twitter;
+   }
+   public function set_twitter($twitter)
+   {
+      $this->twitter = $twitter;
+   }
+   public function get_unsplash()
+   {
+      return $this->unsplash;
+   }
+   public function set_unsplash($unsplash)
+   {
+      $this->unsplash = $unsplash;
    }
 }
