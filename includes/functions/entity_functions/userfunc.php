@@ -104,14 +104,14 @@ class userfunc
 
     function searchUser($user)
     {
-        $response = array();
+        $response["users"] = array();
         $sqlFollower = "SELECT * FROM users WHERE nickname LIKE '%$user%';";
         $result = mysqli_query($this->db->get_conn(), $sqlFollower);
         $resultCheck = mysqli_num_rows($result);
         $a = 0;
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $response[$a] = $row;
+                $response["users"][$a] = $row;
                 $a++;
             }
         }

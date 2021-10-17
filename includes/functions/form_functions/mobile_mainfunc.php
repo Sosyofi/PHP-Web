@@ -21,7 +21,7 @@ class mainfunc
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             $response["success"] = 0;
             $response["user"] = array();
-            $response["followed"] = array();
+            $response["users"] = array();
             $response["message"] = "Email bulunamadı";
             echo json_encode($response);
             exit();
@@ -48,7 +48,7 @@ class mainfunc
 
             $response["user"] = $users;
             $response["success"] = 1;
-            $response["followed"] = $this->getMyUsersMobile($row["id"]);
+            $response["users"] = $this->getMyUsersMobile($row["id"]);
             $response["message"] = "İşlem Başarılı";
             echo json_encode($response);
             exit();
