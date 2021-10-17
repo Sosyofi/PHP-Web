@@ -4,12 +4,11 @@
 require_once 'db.inc.php';
 $db = new DBController();
 
-require_once 'functions/entity_functions/userfunc.php';
-$user = new userfunc($db);
-
-
 require_once 'includes/functions/entity_functions/userfunc.php';
 $userfunc = new userfunc($db);
+
+require_once 'includes/functions/entity_functions/socialfunc.php';
+$socialfunc = new socialfunc();
 
 function getUserName(){
     return $GLOBALS['userfunc']->getUserName();
@@ -38,11 +37,19 @@ function getUsers($id){
 function getUser($id){
     return $GLOBALS['userfunc']->getUser($id);
 }
+function getUserUN($nickname){
+    return $GLOBALS['userfunc']->getUserUN($nickname);
+}
 function getMyInfo(){
     return $GLOBALS['userfunc']->getMyInfo();
 }
 function getFollowers(){
     return $GLOBALS['userfunc']->getFollowers();
+}
+
+
+function getTwitchLiveStatus($userName){
+    return $GLOBALS['socialfunc']->getTwitchLiveStatus($userName);
 }
 
 //Nesne oluşturma işlemleri gerçekleştirilecek ve nesnelerin fonksiyonları kullanılacak.

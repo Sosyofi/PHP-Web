@@ -1,5 +1,12 @@
-@media only screen and (max-width: 480px) {
-
+@media only screen and (max-width: 550px) {
+    .search-user{
+        font-size: 3vw;
+    }
+    .bio-text-h1{
+        
+        font-size: 15vw;
+        margin-left: 15px;
+    }
 }
 @media only screen and (max-width: 315px) {
     

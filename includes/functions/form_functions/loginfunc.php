@@ -12,9 +12,7 @@ class login
         }
         $this->db = $db;
     }
-
     // Veri tabanı fonksiyonları bundan sonra yazılacak.
-
     public function login($email, $password)
     {
         $emailExists = $this->emailExists($this->db->get_conn(), $email);

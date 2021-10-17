@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1147px) {
+  .twitch-embed-bg{
+    aspect-ratio: 16/13;
+    width: 80%;
+}
+}
+
+@media only screen and (max-width: 1100px) {
+  
+}
+

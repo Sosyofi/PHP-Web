@@ -11,6 +11,9 @@
 </head>
 <body>
     <article class="main">
+        <a class="logout-a" href="main.php">
+            <div class="logout-div"></div>
+        </a>
          <section class="search-form">
                 <form class="search-form-desktop" action="#" method="post">
                     <input class="search-user" type="text" name="search-user" placeholder="Kimi Bulmak İstiyorsun ⚡ ">
@@ -21,7 +24,8 @@
             
                 <section class="my-profile-info-section">
                     <div class="my-info-section">
-                    <div class="my-info-pic-div">
+                        <div class="my-info-static-div">
+                        <div class="my-info-pic-div">
                         
                         <label for="file-upload" class="my-pp-background">
                             <div class="my-pp-background">
@@ -42,8 +46,10 @@
                                 }
                                 ?>
                             </div>
-                            </label>
+                        </label>
                     </div>
+                        </div>
+                    
                     <section class="my-profile-info-followers-section">
                     <div class="followers-div">
                         <p class="followers-count"><?php echo getMyFollowersCount() ?></p>
@@ -64,24 +70,24 @@
                         <h1 class="bio-text-h1">
                             Bio
                         </h1>
-                        <input type="text" name="bio" class="profile-bio-text" value="asdasdasdasd">
+                        <input type="text" name="bio" class="profile-bio-text" value="<?php echo $userinfo->bio; ?>">
                     </div>
                         <div class="form-div">
                             <div class="input-div">
                                 <p class="input-text">Twitch</p>
-                                <input class="social-media-input" type="text" name="twitchUN" value="adsasd">
+                                <input class="social-media-input" type="text" name="twitchUN" value="<?php echo $userinfo->twitch;?>">
                             </div>
                             <div class="input-div">
                                 <p class="input-text">Unsplash</p>
-                                <input class="social-media-input" type="text" name="unsplashUN">
+                                <input class="social-media-input" type="text" name="unsplashUN" value="<?php echo $userinfo->unsplash;?>">
                             </div>
                             <div class="input-div">
                                 <p class="input-text">Instagram</p>
-                                <input class="social-media-input" type="text" name="instagramUN">
+                                <input class="social-media-input" type="text" name="instagramUN" value="<?php echo $userinfo->instagram;?>">
                             </div>
                             <div class="input-div">
                                 <p class="input-text">Twitter</p>
-                                <input class="social-media-input" type="text" name="twitterUN">
+                                <input class="social-media-input" type="text" name="twitterUN" value="<?php echo $userinfo->twitter;?>">
                             </div>
                             <button class="submit-button" type="submit" name="submit">Güncelle</button>
                         </div>
@@ -91,7 +97,7 @@
         </section>
         </form>
         <div class="bg-text-div">
-            <p class="bg-text">Merhaba BBestamiS</p>
+            <p class="bg-text">Merhaba <?php echo $userinfo->nickname ?></p>
         </div>
         <section class="bg-section">
             <div class="bg-color">

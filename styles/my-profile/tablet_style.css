@@ -1,3 +1,53 @@
-@media only screen and (max-width: 768px) {
-   
+@media only screen and (max-width: 790px) {
+   .profile-section{
+       flex-direction: column;
+       align-items: center;
+   }
+   .my-profile-info-section{
+    width: 100%;
+    height: unset;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.my-info-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: unset;
+    width: 500px;
+}
+.my-info-static-div{
+    margin-left: 20px;
+    height: unset;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    height: 100%;
+}
+.bg-section{
+    height: 100%;
+}
+.bg-color{
+
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: conic-gradient(from 0deg at 50% 20%, #A4E187 0deg, #085078 360deg);
+    filter: blur(5px);
+}
+.profile-form-div{
+    width: 100%;
+    margin-top: 50px;
+}
+.profile-form-section{
+    width: 80%;
+    margin-bottom: 13vw;
+}
 }
