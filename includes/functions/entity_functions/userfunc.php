@@ -11,7 +11,6 @@ class userfunc
         }
         $this->db = $db;
     }
-
     function getMyInfo()
     {
         $sql = "SELECT * FROM users WHERE id =" . getUserId() . ";";
@@ -43,6 +42,16 @@ class userfunc
                 $resultArray[] = $row;
             }
             return $resultArray;
+        }
+    }
+    function getUserUN($nickname)
+    {
+        $sql = "SELECT * FROM users WHERE nickname = '". $nickname ."';";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
         }
     }
     function getMyUsers()

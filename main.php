@@ -78,7 +78,7 @@
                                 ?>
                         <div class="followers-tamplate-div">
                         <section class="followers-info-section">
-                            <a class="photo-a" href="#">
+                            <div class="photo-a">
                                 <section class="followers-info-pic">
                                     <div class="follower-pp-background">
                                         <?php
@@ -91,7 +91,7 @@
                                         ?>
                                     </div>
                                 </section>
-                            </a>
+                                    </div>
                             <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                             <section class="followers-info-foll">
                                 <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -109,19 +109,35 @@
                         if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                             echo '
                             <section class="followers-social-media-section-4-desktop">
-                            <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                            <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                            <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                            <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+                            <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                            <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
+                            <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                            <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                              </section>
                              <section class="followers-social-media-section-4">
                             <div class="followers-social-media-4">
-                                <a class="followers-twitch-4" href="#">Twitch</a>
-                                <a class="followers-instagram-4" href="#">Instagram</a>
+                                <a class="followers-twitch-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                                <a class="followers-instagram-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
                             </div>
                             <div class="followers-social-media-4">
-                                <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                <a class="followers-twitter-4" href="#">Twitter</a>
+                                <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                                <a class="followers-twitter-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                             </div>
                             </section>
                             ';
@@ -131,22 +147,30 @@
                             ';
                             if($tmp->twitch !== null){
                                 echo '
-                                <a class="followers-twitch" href="#">Twitch</a>
+                                <a class="followers-twitch" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
                                 ';
                             }
                             if($tmp->instagram !== null){
                                 echo '
-                                <a class="followers-instagram" href="#">Instagram</a>
+                                <a class="followers-instagram" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
                                 ';
                             }
                             if($tmp->unsplash !== null){
                                 echo '
-                                <a class="followers-unsplash" href="#">Unsplash</a>
+                                <a class="followers-unsplash" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
                                 ';
                             }
                             if($tmp->twitter !== null){
                                 echo '
-                                <a class="followers-twitter" href="#">Twitter</a>
+                                <a class="followers-twitter" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                 ';
                             }
                            echo '
@@ -163,7 +187,7 @@
                                 ?>
                         <div class="followers-tamplate-div">
                         <section class="followers-info-section">
-                            <a class="photo-a" href="#">
+                            <div class="photo-a">
                                 <section class="followers-info-pic">
                                     <div class="follower-pp-background">
                                     <?php
@@ -176,7 +200,7 @@
                                         ?>
                                     </div>
                                 </section>
-                            </a>
+                                    </div>
                             <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                             <section class="followers-info-foll">
                                 <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -194,19 +218,43 @@
                         if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                             echo '
                             <section class="followers-social-media-section-4-desktop">
-                            <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                            <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                            <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                            <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+
+                            <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                            echo $tmp->nickname;
+                             echo '&platform=Twitch">Twitch</a>
+
+                            <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                            echo $tmp->nickname;
+                             echo '&platform=Instagram">Instagram</a>
+
+
+                            <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                            echo $tmp->nickname;
+                             echo '&platform=Unsplash">Unsplash</a>
+
+
+                            <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                            echo $tmp->nickname;
+                             echo '&platform=Twitter">Twitter</a>
+
+
                              </section>
                              <section class="followers-social-media-section-4">
                             <div class="followers-social-media-4">
-                                <a class="followers-twitch-4" href="#">Twitch</a>
-                                <a class="followers-instagram-4" href="#">Instagram</a>
+                                <a class="followers-twitch-4" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Twitch">Twitch</a>
+                                <a class="followers-instagram-4" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Instagram">Instagram</a>
                             </div>
                             <div class="followers-social-media-4">
-                                <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                <a class="followers-twitter-4" href="#">Twitter</a>
+                                <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Unsplash">Unsplash</a>
+                                <a class="followers-twitter-4" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Twitter">Twitter</a>
                             </div>
                             </section>
                             ';
@@ -216,22 +264,30 @@
                             ';
                             if($tmp->twitch !== null){
                                 echo '
-                                <a class="followers-twitch" href="#">Twitch</a>
+                                <a class="followers-twitch" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Twitch">Twitch</a>
                                 ';
                             }
                             if($tmp->instagram !== null){
                                 echo '
-                                <a class="followers-instagram" href="#">Instagram</a>
+                                <a class="followers-instagram" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Instagram">Instagram</a>
                                 ';
                             }
                             if($tmp->unsplash !== null){
                                 echo '
-                                <a class="followers-unsplash" href="#">Unsplash</a>
+                                <a class="followers-unsplash" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Unsplash">Unsplash</a>
                                 ';
                             }
                             if($tmp->twitter !== null){
                                 echo '
-                                <a class="followers-twitter" href="#">Twitter</a>
+                                <a class="followers-twitter" href="user_profile.php?username=';
+                                echo $tmp->nickname;
+                                 echo '&platform=Twitter">Twitter</a>
                                 ';
                             }
                            echo '
@@ -247,7 +303,7 @@
                                 ?>
                                 <div class="followers-tamplate-div">
                                 <section class="followers-info-section">
-                                    <a class="photo-a" href="#">
+                                    <div class="photo-a">
                                         <section class="followers-info-pic">
                                             <div class="follower-pp-background">
                                             <?php
@@ -260,7 +316,7 @@
                                         ?>
                                             </div>
                                         </section>
-                                    </a>
+                                    </div>
                                     <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                                     <section class="followers-info-foll">
                                         <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -278,19 +334,35 @@
                                 if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                                     echo '
                                     <section class="followers-social-media-section-4-desktop">
-                                    <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                                    <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                                    <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                                    <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+                                    <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                                    <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
+                                    <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                                    <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                      </section>
                                      <section class="followers-social-media-section-4">
                                     <div class="followers-social-media-4">
-                                        <a class="followers-twitch-4" href="#">Twitch</a>
-                                        <a class="followers-instagram-4" href="#">Instagram</a>
+                                        <a class="followers-twitch-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
+                                        <a class="followers-instagram-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Instagram">Instagram</a>
                                     </div>
                                     <div class="followers-social-media-4">
-                                        <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                        <a class="followers-twitter-4" href="#">Twitter</a>
+                                        <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
+                                        <a class="followers-twitter-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                     </div>
                                     </section>
                                     ';
@@ -300,22 +372,30 @@
                                     ';
                                     if($tmp->twitch !== null){
                                         echo '
-                                        <a class="followers-twitch" href="#">Twitch</a>
+                                        <a class="followers-twitch" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
                                         ';
                                     }
                                     if($tmp->instagram !== null){
                                         echo '
-                                        <a class="followers-instagram" href="#">Instagram</a>
+                                        <a class="followers-instagram" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Instagram">Instagram</a>
                                         ';
                                     }
                                     if($tmp->unsplash !== null){
                                         echo '
-                                        <a class="followers-unsplash" href="#">Unsplash</a>
+                                        <a class="followers-unsplash" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
                                         ';
                                     }
                                     if($tmp->twitter !== null){
                                         echo '
-                                        <a class="followers-twitter" href="#">Twitter</a>
+                                        <a class="followers-twitter" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                         ';
                                     }
                                    echo '
@@ -331,7 +411,7 @@
                                 ?>
                                 <div class="followers-tamplate-div">
                                 <section class="followers-info-section">
-                                    <a class="photo-a" href="#">
+                                    <div class="photo-a">
                                         <section class="followers-info-pic">
                                             <div class="follower-pp-background">
                                             <?php
@@ -344,7 +424,7 @@
                                         ?>
                                             </div>
                                         </section>
-                                    </a>
+                                    </div>
                                     <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                                     <section class="followers-info-foll">
                                         <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -362,19 +442,35 @@
                                 if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                                     echo '
                                     <section class="followers-social-media-section-4-desktop">
-                                    <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                                    <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                                    <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                                    <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+                                    <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
+                                    <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
+                                    <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                                    <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                      </section>
                                      <section class="followers-social-media-section-4">
                                     <div class="followers-social-media-4">
-                                        <a class="followers-twitch-4" href="#">Twitch</a>
-                                        <a class="followers-instagram-4" href="#">Instagram</a>
+                                        <a class="followers-twitch-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
+                                        <a class="followers-instagram-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Instagram">Instagram</a>
                                     </div>
                                     <div class="followers-social-media-4">
-                                        <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                        <a class="followers-twitter-4" href="#">Twitter</a>
+                                        <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
+                                        <a class="followers-twitter-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                     </div>
                                     </section>
                                     ';
@@ -384,22 +480,30 @@
                                     ';
                                     if($tmp->twitch !== null){
                                         echo '
-                                        <a class="followers-twitch" href="#">Twitch</a>
+                                        <a class="followers-twitch" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
                                         ';
                                     }
                                     if($tmp->instagram !== null){
                                         echo '
-                                        <a class="followers-instagram" href="#">Instagram</a>
+                                        <a class="followers-instagram" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Instagram">Instagram</a>
                                         ';
                                     }
                                     if($tmp->unsplash !== null){
                                         echo '
-                                        <a class="followers-unsplash" href="#">Unsplash</a>
+                                        <a class="followers-unsplash" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
                                         ';
                                     }
                                     if($tmp->twitter !== null){
                                         echo '
-                                        <a class="followers-twitter" href="#">Twitter</a>
+                                        <a class="followers-twitter" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                         ';
                                     }
                                    echo '
@@ -415,7 +519,7 @@
                                 ?>
                                 <div class="followers-tamplate-div">
                                 <section class="followers-info-section">
-                                    <a class="photo-a" href="#">
+                                    <div class="photo-a">
                                         <section class="followers-info-pic">
                                             <div class="follower-pp-background">
                                             <?php
@@ -428,7 +532,7 @@
                                         ?>
                                             </div>
                                         </section>
-                                    </a>
+                                    </div>
                                     <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                                     <section class="followers-info-foll">
                                         <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -446,19 +550,35 @@
                                 if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                                     echo '
                                     <section class="followers-social-media-section-4-desktop">
-                                    <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                                    <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                                    <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                                    <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+                                    <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                                    <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
+                                    <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
+                                    <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                      </section>
                                      <section class="followers-social-media-section-4">
                                     <div class="followers-social-media-4">
-                                        <a class="followers-twitch-4" href="#">Twitch</a>
-                                        <a class="followers-instagram-4" href="#">Instagram</a>
+                                        <a class="followers-twitch-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitch">Twitch</a>
+                                        <a class="followers-instagram-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Instagram">Instagram</a>
                                     </div>
                                     <div class="followers-social-media-4">
-                                        <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                        <a class="followers-twitter-4" href="#">Twitter</a>
+                                        <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Unsplash">Unsplash</a>
+                                        <a class="followers-twitter-4" href="user_profile.php?username=';
+                                        echo $tmp->nickname;
+                                         echo '&platform=Twitter">Twitter</a>
                                     </div>
                                     </section>
                                     ';
@@ -468,22 +588,30 @@
                                     ';
                                     if($tmp->twitch !== null){
                                         echo '
-                                        <a class="followers-twitch" href="#">Twitch</a>
+                                        <a class="followers-twitch" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
                                         ';
                                     }
                                     if($tmp->instagram !== null){
                                         echo '
-                                        <a class="followers-instagram" href="#">Instagram</a>
+                                        <a class="followers-instagram" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
                                         ';
                                     }
                                     if($tmp->unsplash !== null){
                                         echo '
-                                        <a class="followers-unsplash" href="#">Unsplash</a>
+                                        <a class="followers-unsplash" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
                                         ';
                                     }
                                     if($tmp->twitter !== null){
                                         echo '
-                                        <a class="followers-twitter" href="#">Twitter</a>
+                                        <a class="followers-twitter" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                         ';
                                     }
                                    echo '
@@ -499,7 +627,7 @@
                          } else { ?>
                             <div class="followers-tamplate-div">
                             <section class="followers-info-section">
-                                <a class="photo-a" href="#">
+                                <div class="photo-a">
                                     <section class="followers-info-pic">
                                         <div class="follower-pp-background">
                                         <?php
@@ -512,7 +640,7 @@
                                         ?>
                                         </div>
                                     </section>
-                                </a>
+                                    </div>
                                 <p class="followers-info-user-name"> <?php echo $tmp->nickname ?> </p>
                                 <section class="followers-info-foll">
                                     <p class="followers-info-foll-num"><?php echo getFollowersCount($tmp->id) ?></p>
@@ -530,19 +658,35 @@
                             if($tmp->instagram !== null && $tmp->twitter !== null && $tmp->twitch !== null && $tmp->unsplash !== null){
                                 echo '
                                 <section class="followers-social-media-section-4-desktop">
-                                <a class="followers-twitch-4-desktop" href="#">Twitch</a>
-                                <a class="followers-instagram-4-desktop" href="#">Instagram</a>
-                                <a class="followers-unsplash-4-desktop" href="#">Unsplash</a>
-                                <a class="followers-twitter-4-desktop" href="#">Twitter</a>
+                                <a class="followers-twitch-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                                <a class="followers-instagram-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
+                                <a class="followers-unsplash-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                                <a class="followers-twitter-4-desktop" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                  </section>
                                  <section class="followers-social-media-section-4">
                                 <div class="followers-social-media-4">
-                                    <a class="followers-twitch-4" href="#">Twitch</a>
-                                    <a class="followers-instagram-4" href="#">Instagram</a>
+                                    <a class="followers-twitch-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
+                                    <a class="followers-instagram-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
                                 </div>
                                 <div class="followers-social-media-4">
-                                    <a class="followers-unsplash-4" href="#">Unsplash</a>
-                                    <a class="followers-twitter-4" href="#">Twitter</a>
+                                    <a class="followers-unsplash-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
+                                    <a class="followers-twitter-4" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                 </div>
                                 </section>
                                 ';
@@ -552,22 +696,30 @@
                                 ';
                                 if($tmp->twitch !== null){
                                     echo '
-                                    <a class="followers-twitch" href="#">Twitch</a>
+                                    <a class="followers-twitch" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitch">Twitch</a>
                                     ';
                                 }
                                 if($tmp->instagram !== null){
                                     echo '
-                                    <a class="followers-instagram" href="#">Instagram</a>
+                                    <a class="followers-instagram" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Instagram">Instagram</a>
                                     ';
                                 }
                                 if($tmp->unsplash !== null){
                                     echo '
-                                    <a class="followers-unsplash" href="#">Unsplash</a>
+                                    <a class="followers-unsplash" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Unsplash">Unsplash</a>
                                     ';
                                 }
                                 if($tmp->twitter !== null){
                                     echo '
-                                    <a class="followers-twitter" href="#">Twitter</a>
+                                    <a class="followers-twitter" href="user_profile.php?username=';
+                                    echo $tmp->nickname;
+                                     echo '&platform=Twitter">Twitter</a>
                                     ';
                                 }
                                echo '

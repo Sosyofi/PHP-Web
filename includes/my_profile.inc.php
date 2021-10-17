@@ -1,49 +1,30 @@
 <?php
 
 if (isset($_POST['submit'])) {
+    
     // veri tabanı bağlantısı ve nesnesinin oluşturulması
     require_once 'db.inc.php';
     $db = new DBController();
 
     require_once 'functions/entity_functions/myprofilefunc.php';
     $myprofile = new myprofilefunc($db);
-
-    // user nesnesinin oluşturulması
-    require_once 'entity/user.php';
-    $user = new User();
-
-    // atama işlemleri
+    // atama 
     
-    if($_POST['image'] !== ""){
-         $imageName = $_FILES['image']['name'];
+    if($_FILES['image']['name'] !== ""){
          $imageType = $_FILES['image']['type'];
+         $filePath = $_FILES['image']['tmp_name'];
          $data = file_get_contents($_FILES['image']['tmp_name']);
-        if(substr($imageType,0,5) == "image"){
-            
-            exit();
+         
+            if(substr($imageType,0,5) == "image"){
+                
+                    $myprofile->updatePP($data,$_POST['bio'], $_POST['twitchUN'], $_POST['unsplashUN'], $_POST['instagramUN'], $_POST['twitterUN']);
+                header('location: ../my_profile.php?error=success');
         }else{
             header('location: ../my_profile.php?error=invalidFile');
             exit();
         }
-    exit();
     }
-    header('location: ../my_profile.php?eklenmedi');
-    exit();
-    $user->set_email($_POST['email']);
-    $user->set_hashed_password($_POST['hashed_password']);
-
-
-    if (
-        $login->emptyInputLogin($user->get_email(), $user->get_hashed_password()) !== true
-    ) {
-        header("location: ../index.php?error=emptyinput&page=login");
-        exit();
-    }
-    if ($login->invalidEmail($user->get_email()) !== true) {
-        header("location: ../index.php?error=invalidEmail&page=login");
-        exit();
-    }
-    $login->login($user->get_email(), $user->get_hashed_password());
+    $myprofile->updateUN($_POST['bio'], $_POST['twitchUN'], $_POST['unsplashUN'], $_POST['instagramUN'], $_POST['twitterUN']);
 } else {
     header('location: ../my_profile.php');
     exit();

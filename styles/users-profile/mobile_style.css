@@ -1,0 +1,40 @@
+@media only screen and (max-width: 480px) {
+.followers-social-media-section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.followers-info-foll,
+.followers-info-user-name{
+    display: none;
+}
+.followers-info-mobile{
+    display: flex;
+    flex-direction: column;
+}
+.followers-info-foll-mobile,
+.followers-info-user-name-mobile,
+.followers-info-mobile{
+    display: unset;
+}
+.followers-info-section{
+    width: 40%;
+}
+.followers-social-media-section-4,
+.followers-social-media-section{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search-user{
+    max-width: unset;
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 315px) {
+    
+}
