@@ -13,4 +13,17 @@ class socialfunc
             return "live";
         }
     }
+    
+    function getTwitterInfo($userName)
+    {
+        $twitterInfo = array();
+        $twitter = file_get_contents("https://twitter.com/" . strtolower($userName));
+        preg_match_all('@<img class="ProfileAvatar-image " src="(.*?)"@si',$twitter, $foto);
+        preg_match_all('@<span class="ProfileNav-value" data-count=(.*?) data-is-compact@si',$twitter, $info);
+        
+        $twitterInfo[0] = $foto[1][0];
+        $twitterInfo[1] = $info[1][1];
+        $twitterInfo[2] = $info[1][0];
+        return $twitterInfo;
+    }
 }

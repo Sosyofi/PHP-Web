@@ -139,6 +139,9 @@ body{
     min-height: 400px;
     justify-content: flex-start;
 }
+.followers-tamplate-section::-webkit-scrollbar{
+    display: none;
+}
 .followers-tamplate-div{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
