@@ -46,10 +46,18 @@ function getMyInfo(){
 function getFollowers(){
     return $GLOBALS['userfunc']->getFollowers();
 }
+function isItFollower($followerUserName){
+    return $GLOBALS['userfunc']->isItFollower(getUserUN($followerUserName)->id);
+}
 
 
 function getTwitchLiveStatus($userName){
     return $GLOBALS['socialfunc']->getTwitchLiveStatus($userName);
 }
+function getTwitterInfo($userName){
+    return $GLOBALS['socialfunc']->getTwitterInfo($userName);
+}
+
+
 
 //Nesne oluşturma işlemleri gerçekleştirilecek ve nesnelerin fonksiyonları kullanılacak.

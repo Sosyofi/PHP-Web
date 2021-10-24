@@ -103,14 +103,14 @@
                     } elseif ($_GET['platform'] == "Instagram") {?>
                     <div class="change-social-media-div">
                         <a class="left-a" href="?username=<?php echo $user->nickname ?>&platform=Twitch">
-                        <div class="logout-div"></div>
+                            <div class="logout-div"></div>
                         </a>
-                         <p class="social-media-name"><?php echo $_GET['platform'] ?></p>
-                         <a class="right-a" href="?username=<?php echo $user->nickname ?>&platform=Unsplash">
-                        <div class="logout-div"></div>
-                         </a>
-                         </div>
-                         
+                        <p class="social-media-name"><?php echo $_GET['platform'] ?></p>
+                        <a class="right-a" href="?username=<?php echo $user->nickname ?>&platform=Unsplash">
+                            <div class="logout-div"></div>
+                        </a>
+                    </div>
+                    </div>
                     <?php
                     if($user->instagram !== null){
                        echo 'hesap bulunmakta';
@@ -126,6 +126,7 @@
                          <a class="right-a" href="?username=<?php echo $user->nickname ?>&platform=Twitter">
                         <div class="logout-div"></div>
                          </a>
+                         </div>
                          </div>
                     <?php
                     if($user->unsplash !== null){
@@ -143,9 +144,27 @@
                         <div class="logout-div"></div>
                          </a>
                          </div>
+                         </div>
                     <?php
-                    if($user->twitter !== null){?>
-                       
+                    if($user->twitter !== null){
+                        $twitterInfo = getTwitterInfo($user->twitter);
+                        ?>
+                    <section class="twitter-timeline-section">
+                    <div class="twitter-timeline-div">
+                        <div class="twitter-timeline-info">
+                            <div style="background-image: url('<?php echo $twitterInfo[0] ?>')" class="twitter-timeline-pp"></div>
+                            <div class="twitter-timeline-count">
+                                <p class="twitter-timeline-followers-count"><?php echo $twitterInfo[1] ?> Takipçi</p>
+                                <p class="twitter-timeline-followed-count"><?php echo $twitterInfo[2] ?> Takip</p>
+                            </div>
+                        </div>
+                        <div class="twitter-timeline-bg">
+                            <div class="twitter-timeline-width">
+                                <a class="twitter-timeline" data-lang="tr" data-theme="dark" href="https://twitter.com/<?php echo $user->twitter ?>?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
                     <?php
                      }else{
                         echo 'hesap bulunamadı';
@@ -162,27 +181,48 @@
                 </form>
             </section>
             <section class="my-profile-info-section">
-
                 <section class="my-profile-info-header">
                     <div class="my-info-pic-static">
                     <div class="my-info-pic-div">
-                        <a class="my-pp-background" href="#">
+                        <?php
+                    if(isItFollower($_GET['username']) == true){?>
+                                         <a class="my-pp-background" href="includes/unfollow.php?username=<?php echo $_GET['username'] ?>&platform=<?php echo $_GET['platform'] ?>">
+                                        <?php
+                                    }else {?>
+                                         <a class="my-pp-background" href="includes/unfollow.php?username=<?php echo $_GET['username'] ?>&platform=<?php echo $_GET['platform'] ?>">
+                                        <?php
+                                    }?>
+                       
                         
                             <div class="my-pp-background">
                                 <?php
                                 
                                 if($user->picture !== null){
                                     echo '<img class="my-pp" src="data:image/png;base64,'.base64_encode($user->picture).'">
-                                    <div class="my-pp-p-div">
-                                            <p class="my-pp-p">Profil</p>
+                                    <div class="my-pp-p-div">';
+                                    if(isItFollower($_GET['username']) == true){?>
+                                        <p class="my-pp-p">Takipten Çıkart</p>
+                                        <?php
+                                    }else {?>
+                                        <p class="my-pp-p">Takip Et</p>
+                                        <?php
+                                    }?>
                                     </div>
-                                    </img>';
+                                    </img>
+                                    <?php
                                 }else{
                                     echo '<img class="my-pp" src="imgs/user.png">
-                                    <div class="my-pp-p-div">
-                                            <p class="my-pp-p">Profil</p>
+                                    <div class="my-pp-p-div">';
+                                    if(isItFollower($_GET['username']) == true){?>
+                                        <p class="my-pp-p">Takipten Çıkart</p>
+                                        <?php
+                                    }else {?>
+                                        <p class="my-pp-p">Takip Et</p>
+                                        <?php
+                                    }?>
                                     </div>
-                                </img>';
+                                </img>
+                                <?php
                                 }
                                 ?>
                             </div>
@@ -209,7 +249,38 @@
         </section>
         </section>
         <section class="bg-section">
-            <div class="bg-color"></div>
+        <?php
+                    if( $_GET['platform'] == "Twitch"){
+                        if($user->twitch !== null){
+                            if(getTwitchLiveStatus($user->twitch) == "live"){?>
+                              
+                                <div class="bg-color"></div>
+                          
+                        <?php
+                            }
+                            else{
+                                ?>
+                                <div class="bg-color1"></div>
+                                 <?php
+                            }
+                            ?>
+                        <?php
+                         }else{ ?>
+                                <div class="bg-color1"></div>
+                          <?php
+                         }
+                    } elseif ($_GET['platform'] == "Instagram") {?>
+                        <div class="bg-color"></div>
+                        <?php
+                    } elseif ($_GET['platform'] == "Unsplash") {?>
+
+                        <div class="bg-color"></div>
+                    <?php
+                    } elseif ($_GET['platform'] == "Twitter") {?>
+
+                        <div class="bg-color2"></div>
+                        <?php
+                    }?>
         </section> 
            <?php }else{
         header('location: ./index.php');

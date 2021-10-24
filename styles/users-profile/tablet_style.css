@@ -10,9 +10,10 @@
     .main{
         position: relative;
         flex-direction: column-reverse;
-        justify-content: space-between;
+        justify-content: flex-end;
         width: 100%;
         height: 100vh;
+        min-height: 600px;
         display: flex;
     }
     .search-form-desktop{
@@ -51,7 +52,7 @@
         min-height: unset;
         height: unset;
         width: 100%;
-        height: 100%;
+        height: 65%;
     }
     .twitch-embed-section{
         margin-top: 20px;
@@ -68,5 +69,24 @@
     }
     .my-profile-info-header{
         flex-direction: row;
+    }
+    .bg-color{
+        
+        background: conic-gradient(from 180deg at 50% 35%, #1CE66C 0deg, #460878 360deg);
+    }
+    .bg-color1{
+        background: conic-gradient(from 180deg at 50% 35%, #E61C1C 0deg, #460878 360deg);
+    }
+    .bg-color2{
+        background: conic-gradient(from 180deg at 50% 35%, #1DA1F2 0deg, #460878 360deg);;
+       
+    }
+    .twitter-timeline-div{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: scroll;
     }
 }
