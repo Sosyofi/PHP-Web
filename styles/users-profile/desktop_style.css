@@ -100,7 +100,18 @@ body{
     left: -10%;
     width: 120%;
     height: 120%;
+  
     background: conic-gradient(from 180deg at 70% 35%, #1DA1F2 0deg, #460878 360deg);;
+    filter: blur(5px);
+}
+.bg-color3{
+
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: conic-gradient(from 180deg at 70% 35%, #bbb16f 0deg, #460878 360deg);;
     filter: blur(5px);
 }
 
@@ -549,7 +560,16 @@ body{
     border-radius: 20px;
     display: flex;
     justify-content: flex-end;
-    
+    overflow: scroll;
+    background-color: rgb(42, 47,51);
+}
+.unsplash-timeline-bg{
+    border: 3px solid white;
+    aspect-ratio: 16/9;
+    width: 86%;
+    box-shadow: -3px -3px 10px #90bedb, 10px 5px 20px rgba(6, 6, 6, 0.704);
+    border-radius: 20px;
+    display: flex;
     overflow: scroll;
     background-color: rgb(42, 47,51);
 }
@@ -588,4 +608,10 @@ body{
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+.unsplash-pic-a{
+    height: 100%;
+}
+.unsplash-photos{
+    height: 100%;
 }

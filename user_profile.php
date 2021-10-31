@@ -5,6 +5,7 @@
             if($_GET['platform'] == "Twitter" || $_GET['platform'] == "Twitch" || $_GET['platform'] == "Instagram" || $_GET['platform'] == "Unsplash"){
                 include_once 'header.php';
                 require_once 'includes/db_function.php';
+                require_once 'includes/entity/unsplash/unsplash.php';
                 $user = getUserUN($_GET['username']);
                 ?>
                  <link rel="stylesheet" href="styles/users-profile/desktop_style.css?v=<?php echo time();?>">
@@ -130,7 +131,22 @@
                          </div>
                     <?php
                     if($user->unsplash !== null){
-                        echo 'hesap bulunmakta';
+                        $photos = getPics($user->unsplash);
+                        ?>
+                    <section class="twitter-timeline-section">
+                    <div class="twitter-timeline-div">
+                        <div class="unsplash-timeline-bg"><?php
+                       foreach($photos as $photo){?>
+                       <a target="_blank" class='unsplash-pic-a' href="<?php echo $photo['links']['html'] ?>">
+                           <img class='unsplash-photos' src="<?php echo $photo['urls']['regular'] ?>" alt="">
+                       </a>
+<?php
+                       }
+                       ?>
+                        </div>
+                    </div>
+                    </section>
+                    <?php
                      }else{
                         echo 'hesap bulunamadı';
                     }
@@ -274,13 +290,14 @@
                         <?php
                     } elseif ($_GET['platform'] == "Unsplash") {?>
 
-                        <div class="bg-color"></div>
+                        <div class="bg-color3"></div>
                     <?php
                     } elseif ($_GET['platform'] == "Twitter") {?>
 
                         <div class="bg-color2"></div>
                         <?php
                     }?>
+                    
         </section> 
            <?php }else{
         header('location: ./index.php');
