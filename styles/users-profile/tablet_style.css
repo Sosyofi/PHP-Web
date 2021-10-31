@@ -81,6 +81,9 @@
         background: conic-gradient(from 180deg at 50% 35%, #1DA1F2 0deg, #460878 360deg);;
        
     }
+    .bg-color3{
+        background: conic-gradient(from 180deg at 50% 35%, #bbb16f 0deg, #460878 360deg);;
+    }
     .twitter-timeline-div{
         position: relative;
         width: 100%;
