@@ -1,7 +1,9 @@
-    <?php
-   include_once 'header.php';
+<?php
+    include_once 'header.php';
+    include_once 'includes/search.inc.php';
    require_once 'includes/db_function.php';
-   session_start();
+    /*getInstagramUser('bestami_sarikaya');*/
+    session_start();
     ?>
     <link rel="stylesheet" href="styles/main_page/desktop_style.css?v=<?php echo time();?>">
     <link rel="stylesheet" href="styles/main_page/laptop_style.css?v=<?php echo time();?>">
@@ -15,9 +17,25 @@
         </a>
         <section class="main-page">
             <section class="followers-page-section">
-                <form class="search-form-desktop" action="#" method="post">
-                    <input class="search-user" type="text" name="search-user" placeholder="Kimi Bulmak İstiyorsun ⚡ ">
-                </form>
+            <form class="search-form-desktop" method="GET">
+                    <input class="search-user" type="text" name="searchuser" placeholder="Kimi Bulmak İstiyorsun ⚡ ">
+</form>
+<section class='search-result-section'>
+<?php
+   if($nickname !== null && !empty($nickname)){?>
+<a href="main.php" class='close-result'></a>
+<?php   
+}
+   foreach($nickname as $item){?>
+        <div class="search-result-div" >
+        <a href="user_profile.php?username=<?php echo $item['nickname'] ?>&platform=Unsplash" >
+    <?php echo $item['nickname'] ?>
+            </a>
+        </div>
+<?php
+}
+?>
+</section>
                 <section class="social-media-filter-section">
                 <?php    
                 if(isset($_GET['filter'])){

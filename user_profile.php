@@ -113,8 +113,24 @@
                     </div>
                     </div>
                     <?php
-                    if($user->instagram !== null){
-                       echo 'hesap bulunmakta';
+                        if($user->instagram !== null){ 
+                    
+                        $photos = getInstagramUser($user->instagram);    
+                    ?>
+                    <section class="twitter-timeline-section">
+                    <div class="twitter-timeline-div">
+                        <div class="unsplash-timeline-bg"><?php
+                        foreach(getInstagramPic($user->instagram) as $photo){?>
+                       <a target="_blank" class='unsplash-pic-a' href="#">
+                           <img class='unsplash-photos' src="<?php echo $photo ?>" >
+                       </a>
+                    <?php
+                       }
+                       ?>
+                        </div>
+                    </div>
+                    </section>
+<?php
                     }else{
                         echo 'hesap bulunamadı';
                     }
@@ -132,7 +148,7 @@
                     <?php
                     if($user->unsplash !== null){
                         $photos = getPics($user->unsplash);
-                        ?>
+                       ?>
                     <section class="twitter-timeline-section">
                     <div class="twitter-timeline-div">
                         <div class="unsplash-timeline-bg"><?php

@@ -21,6 +21,20 @@ class userfunc
             return $row;
         }
     }
+    function searchUser($user)
+    {
+        $sqlFollower = "SELECT * FROM users WHERE nickname LIKE '%$user%';";
+        $result = mysqli_query($this->db->get_conn(), $sqlFollower);
+        $resultCheck = mysqli_num_rows($result);
+        $response = array();
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $response[] = $row;
+            }
+        return $response;
+        }
+        return $response;
+    }
     function getUser($id)
     {
         $sql = "SELECT * FROM users WHERE id =" . $id . ";";
