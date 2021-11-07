@@ -57,6 +57,13 @@ function getTwitchLiveStatus($userName){
 function getTwitterInfo($userName){
     return $GLOBALS['socialfunc']->getTwitterInfo($userName);
 }
+function getInstagramUser($userName){
+    return $GLOBALS['socialfunc']->getInstagramUser($userName);
+}
+function getInstagramPic($userName){
+    return $GLOBALS['socialfunc']->getInstagramPic($userName);
+}
+
 
 
 
